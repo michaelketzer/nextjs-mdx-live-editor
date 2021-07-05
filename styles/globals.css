@@ -14,3 +14,54 @@ a {
 * {
   box-sizing: border-box;
 }
+
+main {
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.preview {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 2rem;
+  width: 50vw;
+}
+
+.actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  grid-gap: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.25rem 0.75rem;
+}
+
+thead th {
+  border-bottom: 1px solid #ccc;
+}
+
+tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.errorOverlay {
+  background-color: rgba(255, 0, 0, 0.178);
+  padding: 2rem;
+}
+
+.error {
+  color: rgb(255, 45, 45);
+  font-weight: bold;
+  font-size: 2rem;
+}
