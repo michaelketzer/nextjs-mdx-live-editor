@@ -43,7 +43,9 @@ export default function Home({ defaultPreview }: { defaultPreview: MDXRemoteSeri
           <button onClick={() => downloadMdx(code)}>Download</button>
         </div>
 
-        <Editor value={code} setValue={setCode} />
+        <div className={'editor'}>
+          <Editor value={code} setValue={setCode} />
+        </div>
 
         <div className={'preview'}>
           <Preview content={code} defaultPreview={defaultPreview} />

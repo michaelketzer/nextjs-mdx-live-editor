@@ -3,6 +3,10 @@ import { ReactElement } from 'react';
 
 const options = {
   selectOnLineNumbers: true,
+  wordWrap: 'on',
+  scrollbar: {
+    horizontal: 'auto'
+  }
 };
 
 interface Props {
@@ -11,15 +15,15 @@ interface Props {
   setValue: (value: string) => void;
 }
 
-export default function Editor({ fullWidth, setValue, value }: Props): ReactElement {
+export default function Editor({ setValue, value }: Props): ReactElement {
   const onChange = (newValue: string) => {
     setValue(newValue);
   };
 
   return (
     <MonacoEditor
-      width={fullWidth ? '100vw' : '50vw'}
-      height="100vh"
+      width={'100%'}
+      height={'100%'}
       language="markdown"
       theme={'vs-dark'}
       value={value}

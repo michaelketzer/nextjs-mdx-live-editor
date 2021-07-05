@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
 }
 
 a {
@@ -19,6 +20,11 @@ main {
   display: flex;
   max-height: 100vh;
   overflow: hidden;
+}
+
+.editor {
+  height: 100vh;
+  width: 50vw;
 }
 
 .preview {
@@ -64,4 +70,24 @@ tr:nth-child(2n) {
   color: rgb(255, 45, 45);
   font-weight: bold;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    font-size: 14px;
+  }
+  main {
+    flex-direction: column;
+  }
+
+  .preview {
+    width: 100vw;
+    height: 50vh;
+    padding: 1rem;
+  }
+
+  .editor {
+    width: 100vw;
+    height: 50vh;
+  }
 }

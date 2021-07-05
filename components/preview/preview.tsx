@@ -24,6 +24,14 @@ interface Props {
   defaultPreview: MDXRemoteSerializeResult;
 }
 
+function convertPossibleDate(input: any): string {
+  if (input instanceof Date) {
+    return (new Date(input)).toISOString().split('T')[0];
+  }
+
+  return `${input}`;
+}
+
 export default function Preview({ content, defaultPreview }: Props): ReactElement {
   const [data, setData] = useState({});
   const [preview, setPreview] = useState<MDXRemoteSerializeResult>(defaultPreview);
@@ -64,7 +72,7 @@ export default function Preview({ content, defaultPreview }: Props): ReactElemen
             {Object.entries(data).map(([key, value]) => (
               <tr key={key}>
                 <td>{key}</td>
-                <td>{value + ''}</td>
+                <td>{convertPossibleDate(value)}</td>
               </tr>
             ))}
           </tbody>
