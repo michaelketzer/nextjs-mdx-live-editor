@@ -12,6 +12,7 @@ export default function Shape(): ReactElement {
           justify-content: center;
           border-radius: 50%;
           background-color: #F0F;
+          vertical-align: middle;
         }
       `}</style>
     </i>

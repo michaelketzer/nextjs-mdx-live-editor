@@ -1,5 +1,19 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
-export default function H2(): ReactElement {
-  throw new Error('Oops. H2 throws errors.');
+interface Props {
+  children: ReactNode;
+}
+
+export default function H2({ children }: Props): ReactElement {
+  return (
+    <h2>
+      {children}
+
+      <style jsx>{`
+        h2 {
+          color: crimson;
+        }
+      `}</style>
+    </h2>
+  );
 }
