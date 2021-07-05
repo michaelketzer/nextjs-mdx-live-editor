@@ -15,6 +15,11 @@ updated: 2021-07-05
 
 # Start writing your MDX content
 
+- Test bullet point
+
+Custom elements <Shape /> can be viewed instantly
+
+*lets write **some cool** markdown*
 `;
 
 function downloadMdx(content: string): void {
@@ -34,6 +39,7 @@ export default function Home({ defaultPreview }: { defaultPreview: MDXRemoteSeri
     <>
       <main>
         <div className={'actions'}>
+          <a href={'https://github.com/michaelketzer/nextjs-mdx-live-editor'} target={'_blank'} rel={'norefeerer'}><button>Github</button></a>
           <button onClick={() => downloadMdx(code)}>Download</button>
         </div>
 
